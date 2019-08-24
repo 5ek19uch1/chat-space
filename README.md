@@ -4,18 +4,19 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null:false|
+|name|string|null:false|
 |email|string|null: false|
 |password|string|null: false|
 ### Association
 - has_many :messages
 - has_many :groups   through: :members
+- has_many :members
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|text||
+|body|text||
+|image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: ture|
 ### Association
@@ -25,9 +26,8 @@
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|member_id|integer|null: false, foreign_key: ture|
 |group_id|integer|null: false, foreign_key: ture|
-|message_id|integer|null: false, foreign_key: ture|
+|user_id|integer|null: false, foreign_key: ture|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -35,12 +35,13 @@
 ## gorupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|members_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+|group_id|integer|null: false, foreign_key: true|
 |users_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :users      through: :members
-- has_many :messages   through: :members 
+- has_many :messages   
+- has_many :members 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
