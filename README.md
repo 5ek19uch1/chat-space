@@ -36,8 +36,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
-|users_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :users      through: :members
 - has_many :messages   
