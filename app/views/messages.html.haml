@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "CTpE7NQ3G0yhN0nvyknpyqt/zUcy/qGxamFQDWM5zYHBC7X3oCn1MfaCOKsM641HVx54RdpkAwAHH262t5iFfQ==", :name => "csrf-token"}/
+    %link{"data-turbolinks-track" => "reload", :href => "/assets/application-20597f7122b97f433c4487edf7d6a0cfc9e951e2a661b8b0c7320b95bbd38ccd.css", :media => "all", :rel => "stylesheet"}/
+    %script{"data-turbolinks-track" => "reload", :src => "/assets/application-92a91cf5753a538c5407a46c726acab43576fb46358ffa8a7ee0ee0719aa2f51.js"}
+  %body
+    .flash-box
+    .wrapper
+      .chat-side
+        .side-header
+          .side-header__box
+            %p.side-header__box__user-name SAMPLE
+            %ul.side-header__box__menu
+              %li.side-header__box__menu__new-group
+                %a{:href => "/groups/new"}
+                  %i.fa.fa-edit
+              %li.side-header__box__menu__edit-user
+                %a{:href => "/users/179/edit"}
+                  %i.fa.fa-cog
+        .groups
+          %a{:href => "/groups/260/messages"}
+            .group
+              %p.group__group-name TEST
+              %p.group__latest-message TestMessage
