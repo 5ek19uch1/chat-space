@@ -11,7 +11,13 @@
 html{
   color:#000;
   background:#FFF;
+  box-sizing: border-box;
 }
+
+*{
+  box-sizing: inherit;
+}
+
 /*
   TODO remove settings on BODY since we can't namespace it.
 */
