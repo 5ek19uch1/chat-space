@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", }/
+    %meta{content: "text/html; charset=UTF-8", }/
     %title ChatSpace
-    %link{"data-turbolinks-track" => "reload", :href => "/assets/stylesheets/application.scss", :media => "all", :rel => "stylesheet"}/
+    %link{"data-turbolinks-track": "reload", href: "/assets/stylesheets/application.scss", media: "all", rel: "stylesheet"}/
   %body
     .upper-box　グループを作成しました
     .wrapper
@@ -13,10 +13,10 @@
             %p.side-header__box__user-name SAMPLE user-name
             %ul.side-header__box__menu
               %li.side-header__box__menu__new-group
-                %a{:href => "http://www.google.com"}
+                =link_to "http://www.google.com" do
                   %i.fa.fa-edit
               %li.side-header__box__menu__edit-user
-                %a{:href => "http://www.google.com"}
+                =link_to "http://www.google.com" do
                   %i.fa.fa-cog
         .groups
           .group
@@ -38,7 +38,7 @@
               .message__upper-info__date 2019/08/26(Mon) 09:47:07
             .message-text SAMPLE message-text
         .form
-          %form#new_message.new_message{"accept-charset" => "UTF-8", action: "/groups/374/messages", enctype: "multipart/form-data", method: "post"}
+          %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/374/messages", enctype: "multipart/form-data", method: "post"}
             %input{name: "utf8", type: "hidden", value: "✓"}/
             %input{name: "authenticity_token", type: "hidden", value: ""}/
             .input-box
