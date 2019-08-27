@@ -2,10 +2,11 @@
 @import "font-awesome";
 
 $white-font: #ffffff;
+$chatspace-blue: #38aef0;
 $font-type: bold;
 
 .upper-box{
-  background-color: #38aef0;
+  background-color: $chatspace-blue;
   color: $white-font;
   text-align: center;
 }
@@ -109,8 +110,8 @@ height: 100px;
                 line-height: 40px;
                 padding: 0 20px;
                 margin-top: 30px;
-                border: solid 1px #38aef0;
-                color: #38aef0;
+                border: solid 1px $chatspace-blue;
+                color: $chatspace-blue;
                 position: absolute;
                 right: 40px;
               }
@@ -190,7 +191,7 @@ height: 100px;
                     height: 50px;
                     padding: 0 30px;
                     margin-left: 15px;
-                    background-color: #38aef0;
+                    background-color: $chatspace-blue;
                     color: $white-font;
                     cursor: pointer;
                     float:right;
