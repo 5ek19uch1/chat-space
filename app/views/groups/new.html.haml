@@ -18,9 +18,8 @@
       .chat-group-form__field--left
         %label.chat-group-form__label チャットメンバー
       .chat-group-form__field--right
-          = form_for @group do |f|
-            = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-              = b.label { b.check_box + b.text }
+        = f.collection_check_boxes :user_ids, User.all, :id, :name
+
         / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
     .chat-group-form__field
       .chat-group-form__field--left
