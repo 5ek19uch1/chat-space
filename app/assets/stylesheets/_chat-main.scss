@@ -1,0 +1,124 @@
+$white-font: #ffffff;
+$chatspace-blue: #38aef0;
+$font-type: bold;
+
+.wrapper{
+  margin: 0px;
+  padding: 0px;
+  .chat-main{
+    width: calc(100vw - 300px);
+    float: left;
+      .main-header{
+        height: 100px;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #eee;
+        overflow: scroll;
+        &__left-box{
+          margin-top: 35px;
+        }
+          &__left-box__current-group{
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+          }
+            &__left-box__member-list{
+              display: flex;
+              font-size: 12px;
+              color: #999999;
+            }
+            &__member{
+              font-size: 12px;
+              color: #999999;
+            }
+              &__edit-button{
+                height: 40px;
+                line-height: 40px;
+                padding: 0 20px;
+                margin-top: 30px;
+                border: solid 1px $chatspace-blue;
+                color: $chatspace-blue;
+                position: absolute;
+                right: 40px;
+              }
+      }
+      .messages{
+        height: calc(100vh - 190px);
+        padding: 46px 40px;
+        background-color: #fafafa;
+        overflow: scroll;
+        .message{
+          padding-bottom: 40px;
+          &__upper-info{
+            display: flex;
+            margin-bottom: 10px;
+          }
+            &__upper-info__talker{
+              color: #434a54;
+              font-size: 16px;
+              font-weight: bold;
+            }
+              &__upper-info__date{
+                color: #999999;
+                font-size: 12px;
+                margin-left: 10px;
+              }
+              .message-text{
+                color: #434a54;
+                font-size: 14px;
+                margin-bottom: 10px;
+              }
+            }
+        }
+
+        .form{
+          height: 90px;
+          padding: 20px 40px;
+          background-color: #dddddd;
+          .new_message.new_message{
+            display: flex;
+
+              .input-box{
+                position: relative;
+                width: 100%;
+                display: flex;
+                .input-box__text{
+                  height: 50px;
+                  width: 100%;
+                  padding: 0 40px 0 10px;
+                  color: #434a54;
+                  border-style: none;
+                }
+                .input-box__image{
+                  font-size: 1.3rem;
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  cursor: pointer;
+                  .fa-image{
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                  }
+                    .input-box__image__file{
+                        display: none;
+                    }
+                }
+              }
+            }
+                  .submit-button{
+                    width: 100px;
+                    height: 50px;
+                    padding: 0 30px;
+                    margin-left: 15px;
+                    background-color: $chatspace-blue;
+                    color: $white-font;
+                    cursor: pointer;
+                    float:right;
+                  }
+          }
+  }
+}
