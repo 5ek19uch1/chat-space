@@ -1,5 +1,7 @@
-.upper-box　グループを作成しました
+.upper-box
 .wrapper
+  -# = render 'shared/side_bar'
+
   .chat-side
     .side-header
       .side-header__box
@@ -13,8 +15,18 @@
               %i.fa.fa-cog
     .groups
       .group
-        %p.group__group-name SAMPLE group-name
-        %p.group__latest-message SAMPLE message
+      - current_user.groups.each do |group|
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
+
+
+
+
+
+
 
   .chat-main
     .main-header
