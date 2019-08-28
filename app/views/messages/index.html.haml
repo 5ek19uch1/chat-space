@@ -1,46 +1,42 @@
-!!!
-%html
-  %head
-  %body
-    .upper-box　グループを作成しました
-    .wrapper
-      .chat-side
-        .side-header
-          .side-header__box
-            %p.side-header__box__user-name SAMPLE user-name
-            %ul.side-header__box__menu
-              %li.side-header__box__menu__new-group
-                =link_to "http://www.google.com" do
-                  %i.fa.fa-edit
-              %li.side-header__box__menu__edit-user
-                =link_to "http://www.google.com" do
-                  %i.fa.fa-cog
-        .groups
-          .group
-            %p.group__group-name SAMPLE group-name
-            %p.group__latest-message SAMPLE message
+.upper-box　グループを作成しました
+  .wrapper
+  .chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name SAMPLE user-name
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          =link_to "http://www.google.com" do
+            %i.fa.fa-edit
+        %li.side-header__box__menu__edit-user
+          =link_to "http://www.google.com" do
+            %i.fa.fa-cog
+  .groups
+    .group
+      %p.group__group-name SAMPLE group-name
+      %p.group__latest-message SAMPLE message
 
-      .chat-main
-        .main-header
-          .main-header__left-box
-            .main-header__left-box__current-group SAMPLE current-group
-            .main-header__left-box__member-list
-              %p MEMBER:
-              .main-header__left-box__member-list__member SAMPLE member
-          .main-header__edit-button Edit
-        .messages
-          .message
-            .message__upper-info
-              .message__upper-info__talker SAMPLE info-talker
-              .message__upper-info__date 2019/08/26(Mon) 09:47:07
-            .message-text SAMPLE message-text
-        .form
-          %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/374/messages", enctype: "multipart/form-data", method: "post"}
-            %input{name: "utf8", type: "hidden", value: "✓"}/
-            %input{name: "authenticity_token", type: "hidden", value: ""}/
-            .input-box
-              %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-              %label.input-box__image{for: "message_image"}
-                %i.fa.fa-image
-                %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
-            %input.submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group SAMPLE current-group
+      .main-header__left-box__member-list
+        %p MEMBER:
+        .main-header__left-box__member-list__member SAMPLE member
+    .main-header__edit-button Edit
+  .messages
+    .message
+      .message__upper-info
+        .message__upper-info__talker SAMPLE info-talker
+        .message__upper-info__date 2019/08/26(Mon) 09:47:07
+      .message-text SAMPLE message-text
+  .form
+    %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/374/messages", enctype: "multipart/form-data", method: "post"}
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input{name: "authenticity_token", type: "hidden", value: ""}/
+      .input-box
+        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %label.input-box__image{for: "message_image"}
+          %i.fa.fa-image
+          %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
+      %input.submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
