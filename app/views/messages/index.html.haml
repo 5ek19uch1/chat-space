@@ -1,7 +1,6 @@
 .upper-box
 .wrapper
   .chat-side
-    =render "chat-side"
     .side-header
       .side-header__box
         %p.side-header__box__user-name
@@ -31,17 +30,8 @@
           .main-header__left-box__member-list__member SAMPLE member
       .main-header__edit-button Edit
     .messages
-      .message
-        .message__upper-info
-          .message__upper-info__talker
-            = message.user.name
-          .message__upper-info__date
-            = message.created_at.strftime("%Y/%m/%d %H:%M")
-        .message-text
-          - if message.content.present?
-            %p.lower-message__content
-              = message.content
-          = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+      = render @messages
+
 
 
 
