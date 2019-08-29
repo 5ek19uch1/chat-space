@@ -9,6 +9,7 @@ $font-type: bold;
     width: 300px;
     color: $white-font;
     float: left;
+
       .side-header{
         background-color: #253141;
         height: 100px;
@@ -51,18 +52,27 @@ $font-type: bold;
     .groups{
       height: calc(100vh - 100px);
       background-color: #2f3e51;
+      color: $white-font;
       padding: 20px 20px 0;
       overflow: scroll;
+
         .group{
           margin-bottom: 40px;
-          &__group-name{
+
+          .group__name{
             font-size: 15px;
             font-weight: $font-type;
             margin-bottom: 5px;
+            color: $white-font;
+            text-decoration:none;
+
           }
-          &__latest-message{
+          .group__message{
             font-size: 11px;
-            font-weight: $font-type;
+            color: $white-font;
+            text-decoration:none;
+
+
           }
         }
     }
