@@ -9,62 +9,66 @@ $font-type: bold;
     width: 300px;
     color: $white-font;
     float: left;
-      .side-header{
-        background-color: #253141;
-        height: 100px;
+    .side-header{
+      background-color: #253141;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      &__box{
+        justify-content: space-between;
+        width: 100%;
+        font-weight: $font-type;
         display: flex;
-        align-items: center;
-        padding: 0 20px;
-        &__box{
-          justify-content: space-between;
-          width: 100%;
+      }
+        &__box__user-name{
+          font-size: 16px;
           font-weight: $font-type;
-          display: flex;
         }
-          &__box__user-name{
-            font-size: 16px;
-            font-weight: $font-type;
-          }
-          &__box__menu{
-            &__new-group{
-              display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
-              font-size: inherit;
-              text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              .fa-edit{
-                color: $white-font;
-              }
+        &__box__menu{
+          &__new-group{
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            .fa-edit{
+              color: $white-font;
             }
-            &__edit-user{
-              display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
-              font-size: inherit;
-              text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-              .fa-cog{
-                color: $white-font;
-              }
+          }
+          &__edit-user{
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            .fa-cog{
+              color: $white-font;
             }
           }
         }
+      }
     .groups{
       height: calc(100vh - 100px);
       background-color: #2f3e51;
+      color: #ffffff;
       padding: 20px 20px 0;
       overflow: scroll;
-        .group{
-          margin-bottom: 40px;
-          &__group-name{
-            font-size: 15px;
-            font-weight: $font-type;
-            margin-bottom: 5px;
-          }
-          &__latest-message{
-            font-size: 11px;
-            font-weight: $font-type;
-          }
+      .group{
+        margin-bottom: 40px;
+        .group__name{
+          font-size: 15px;
+          font-weight: $font-type;
+          margin-bottom: 5px;
+          color: $white-font;
+          text-decoration:none;
         }
+        .group__message{
+          font-size: 11px;
+          color: $white-font;
+          text-decoration:none;
+        }
+      }
     }
   }
 }
