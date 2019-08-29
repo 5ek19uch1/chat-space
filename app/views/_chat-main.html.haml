@@ -1,0 +1,23 @@
+.main-header
+  .main-header__left-box
+    .main-header__left-box__current-group SAMPLE current-group
+    .main-header__left-box__member-list
+      %p MEMBER:
+      .main-header__left-box__member-list__member SAMPLE member
+  .main-header__edit-button Edit
+
+.messages
+  = render @messages
+
+
+.form
+  %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/374/messages", enctype: "multipart/form-data", method: "post"}
+    %input{name: "utf8", type: "hidden", value: "✓"}/
+    %input{name: "authenticity_token", type: "hidden", value: "rLJCEJtZyyKPw757zIvd5w/kTPqbmGX6/Evz4X8GBl8PmaIkcwY2EGXORi1On+6OrZRC9pA/sMKMNXEkBGx5aA=="}/
+    .input-box
+      %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+      %label.input-box__image{for: "message_image"}
+        %i.fa.fa-image
+        %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
+    %input.submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+
