@@ -50,21 +50,21 @@ $font-type: bold;
         overflow: scroll;
         .message{
           padding-bottom: 40px;
-          &__upper-info{
+          .upper-message{
             display: flex;
             margin-bottom: 10px;
           }
-            &__upper-info__talker{
+            .upper-message__user-name{
               color: #434a54;
               font-size: 16px;
               font-weight: bold;
             }
-              &__upper-info__date{
+              .upper-message__date{
                 color: #999999;
                 font-size: 12px;
                 margin-left: 10px;
               }
-              .message-text{
+              .lower-message__content{
                 color: #434a54;
                 font-size: 14px;
                 margin-bottom: 10px;

@@ -1,58 +1,5 @@
 .upper-box
 .wrapper
   .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name
-          =current_user.name
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-            =link_to new_group_path do
-              %i.fa.fa-edit
-          %li.side-header__box__menu__edit-user
-            =link_to edit_user_path(current_user) do
-              %i.fa.fa-cog
-    .groups
-      -current_user.groups.each do |group|
-        .group
-          = link_to group_messages_path(group) do
-            .group__name
-              = group.name
-            .group__message
-              メッセージはまだありません。
-
-  .chat-main
-    .main-header
-      .main-header__left-box
-        .main-header__left-box__current-group SAMPLE current-group
-        .main-header__left-box__member-list
-          %p MEMBER:
-          .main-header__left-box__member-list__member SAMPLE member
-      .main-header__edit-button Edit
-
-    .messages
-      -# .message
-      -#   .message__upper-info
-      -#     .message__upper-info__talker
-      -#       = message.user.name
-      -#     .message__upper-info__date
-      -#       = message.created_at.strftime("%Y/%m/%d %H:%M")
-      -#   .message-text
-      -#     - if message.content.present?
-      -#       %p.lower-message__content
-      -#         = message.content
-      -#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-
-
-
-    .form
-      %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/374/messages", enctype: "multipart/form-data", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✓"}/
-        %input{name: "authenticity_token", type: "hidden", value: ""}/
-        .input-box
-          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label.input-box__image{for: "message_image"}
-            %i.fa.fa-image
-            %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
-        %input.submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+    = render "./side-bar"
 
