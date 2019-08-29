@@ -1,9 +1,12 @@
-.upper-box　グループを作成しました
+.upper-box
 .wrapper
+  -# = render 'shared/side_bar'
+
   .chat-side
     .side-header
       .side-header__box
-        %p.side-header__box__user-name SAMPLE user-name
+        %p.side-header__box__user-name
+          =current_user.name
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
             =link_to new_group_path do
@@ -12,9 +15,13 @@
             =link_to edit_user_path(current_user) do
               %i.fa.fa-cog
     .groups
-      .group
-        %p.group__group-name SAMPLE group-name
-        %p.group__latest-message SAMPLE message
+      -current_user.groups.each do |group|
+        .group
+          = link_to group_messages_path(group) do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
 
   .chat-main
     .main-header
