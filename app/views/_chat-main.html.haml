@@ -21,3 +21,12 @@
         %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
     %input.submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
 
+
+    -# .form
+    -#   = form_for [@group, @message] do |f|
+    -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    -#     .form__mask
+    -#       = f.label :image, class: 'form__mask__image' do
+    -#         = fa_icon 'picture-o', class: 'icon'
+    -#         = f.file_field :image, class: 'hidden'
+    -#     = f.submit 'Send', class: 'form__submit'
