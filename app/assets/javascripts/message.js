@@ -1,31 +1,37 @@
 $(function(){
   function buildMessage(message){
     var html = `<p class="lower-message__content">
-                ${message.contet}
+                  ${message.contet}
                 </p>`
+                `<div class="upper-message__user-name">
+                  ${message.user.name}
+                </div> `
+                `<div class="upper-message__date">
+                  ${message.date}
+                </div>`
+                `<img class="lower-message__image" src="#{message.image}" alt="User black">`
     return html;
   }
 
   $('#new_message').on('submit', function(e) {
-    e.preventDefault();
-    var fromdata = new FormData(this);
+    e.preventDefault();         // form側のPOSTをキャンセルしている(???)
+    var formdata = new FormData(this);
     var url = $(this).attr('action');
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: FormData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
+    $.ajax({                   //サーバに送信するリクエストの設定
+      url: url,                 //Ajaxリクエストを送信するURLを指定
+      type: "POST",             //リクエストのタイプを指定
+      data: formdata,           //サーバーへ送信するデータ
+      dataType: 'json',         //サーバーから返ってくるデータ型の指定
+      processData: false,       //
+      contentType: false        //
     })
-    .done(function(message) {
-      var html = buildMessage(message);
-      $('.messages').append(html)
-      $('#new_message').val('')
-
+    .done(function(message) {   //通信に成功した場合の処理
+      var html = buildMessage(message);     //ayasii buildMessageの結果を反映させる<<こいつがundifined
+      $('.messages').append(html)//messagesクラスにhtmlをアペンドする
+      $('#new_message').val('')  //formを空にする
     })
-    .fail(function(){
-      alert('処理がうまく行われていません');
+    .fail(function(){           //通信に失敗した場合の処理
+      alert('エラー');
     })
   })
 });
