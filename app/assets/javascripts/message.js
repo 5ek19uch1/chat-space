@@ -1,9 +1,7 @@
 $(function(){
   function buildMessage(message){
-    var image = ""
-    message.image ? image = `<img src="${message.image}">` : image = ""
-
-
+    // var image = message.image != null ? `<img src="${message.image}">` : "";
+    var image = message.image ? `<img src= ${message.image}>` : "";
     var html = `<div class="messages">
                   <div class="message">
                     <div class="upper-message">
@@ -17,8 +15,10 @@ $(function(){
                     <div class="lower-message">
                       <p class="lower-message__content">
                         ${message.content}
-                        </p>
-                      <img src="${message.image}">
+                      </p>
+                      <div class="lower-message__image">
+                        ${image}
+                      </div>
                     </div>
                 </div>`
   return html;
@@ -36,14 +36,23 @@ $('#new_message').on('submit', function(e) {
       processData: false,       //
       contentType: false        //
     })
-    .done(function(data) {   //通信に成功した場合の処理
-      var html = buildMessage(data);  //buildMessageの結果を反映させる
+    .done(function(message) {   //通信に成功した場合の処理
+      var html = buildMessage(message);  //buildMessageの結果を反映させる
+      console.log(message)
       $('.messages').append(html);//messagesクラスにhtmlをアペンドする
       $('#new_message').val('');
-      $('#new_message').removeAttr('disabled');
-      //データ受け取り後画面最下部までスクロール
-      $('#new_message').animate({ scrollTop: $('#new_message')[0].scrollHeight});
-      return false
+
+      $('form')[0].reset();
+
+      scrollBottom();
+
+      function scrollBottom(){
+        var target = $('.message').last();
+        var position = target.offset().top + $('.messages').scrollTop();
+        $('.messages').animate({
+          scrollTop: position
+        }, 300, 'swing');
+      }
 
     })
       .fail(function(){      //通信に失敗した場合の処理
