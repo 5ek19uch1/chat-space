@@ -6,32 +6,7 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
   end
 
-  # def create
-  #   @message = @group.messages.new(message_params)
-  #   if @message.save
-  #     respond_to do |format|
-  #       format.html { redirect_to group_messages_path(@group) }
-  #       format.json { render json: @message}
-  #     #拡張子やヘッダー情報を利用して、条件分岐。
-  #   end
-  #   else
-  #     @messages = @group.messages.includes(:user)
-  #     flash.now[:alert] = 'メッセージを入力してください。'
-  #     render :index
-  #   end
-  # end
-  #------------------------------------
-  # def create
-  #   @message = @group.messages.new(message_params)
-  #   if @message.save
-  #     redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
-  #   else
-  #     @messages = @group.messages.includes(:user)
-  #     flash.now[:alert] = 'メッセージを入力してください。'
-  #     render :index
-  #   end
-  # end
-#-----------------------------------------
+
 
     def create
       @message = @group.messages.new(message_params)
