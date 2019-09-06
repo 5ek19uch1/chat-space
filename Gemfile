@@ -61,3 +61,4 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "better_errors"
+gem 'pry-rails'

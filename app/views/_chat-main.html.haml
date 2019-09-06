@@ -1,9 +1,11 @@
 .main-header
   .main-header__left-box
-    .main-header__left-box__current-group = group.name
+    .main-header__left-box__current-group
+      = @group.name
     .main-header__left-box__member-list
       %p MEMBER:
-      .main-header__left-box__member-list__member SAMPLE member
+      .main-header__left-box__member-list__member
+        =current_user.name
   .main-header__edit-button Edit
 
 .messages
