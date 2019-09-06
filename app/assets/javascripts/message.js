@@ -1,7 +1,7 @@
 $(function(){
   function buildMessage(message){
     var image = message.image ? `<img src= ${message.image}>` : "";
-    //以下、"messages"から始めると、面白い事が起きる。
+    //以下、"messages"から始めると、変な事が起きる。
     var html = `<div class="message">
                     <div class="upper-message">
                       <div class="upper-message__user-name">
