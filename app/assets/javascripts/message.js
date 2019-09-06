@@ -1,6 +1,5 @@
 $(function(){
   function buildMessage(message){
-    // var image = message.image != null ? `<img src="${message.image}">` : "";
     var image = message.image ? `<img src= ${message.image}>` : "";
     //以下、"messages"から始めると、面白い事が起きる。
     var html = `<div class="message">
@@ -39,7 +38,6 @@ $('#new_message').on('submit', function(e) {
     .done(function(message) {   //通信に成功した場合の処理
       var html = buildMessage(message);  //buildMessageの結果を反映させる
       $('.messages').append(html);//messagesクラスにhtmlをアペンドする
-      $('#new_message').val('');
 
       $('form')[0].reset();
 
