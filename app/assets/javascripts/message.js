@@ -2,8 +2,8 @@ $(function(){
   function buildMessage(message){
     // var image = message.image != null ? `<img src="${message.image}">` : "";
     var image = message.image ? `<img src= ${message.image}>` : "";
-    var html = `<div class="messages">
-                  <div class="message">
+    //以下、"messages"から始めると、面白い事が起きる。
+    var html = `<div class="message">
                     <div class="upper-message">
                       <div class="upper-message__user-name">
                         ${message.user_name}
@@ -38,7 +38,6 @@ $('#new_message').on('submit', function(e) {
     })
     .done(function(message) {   //通信に成功した場合の処理
       var html = buildMessage(message);  //buildMessageの結果を反映させる
-      console.log(message)
       $('.messages').append(html);//messagesクラスにhtmlをアペンドする
       $('#new_message').val('');
 
