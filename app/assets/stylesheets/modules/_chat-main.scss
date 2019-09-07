@@ -42,6 +42,10 @@ $font-type: bold;
                 position: absolute;
                 right: 40px;
               }
+              .edit-button1{
+                text-decoration: none;
+                color: $chatspace-blue;
+              }
       }
       .messages{
         height: calc(100vh - 190px);
