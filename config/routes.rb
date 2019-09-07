@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update]
   resources :groups, only: [:new, :create, :edit, :update] do
     resources :messages, only: [:index, :create]
-
-    namespace :api do
-      resources :messages, only: :index, defaults: { format: 'josn'}
+    namespace :api do #APIのコントローラを動かすための記述
+      resources :messages, only: :index, defaults: { format: 'json' }
+      #defaultsオプションを利用して、このルーティングが来たらjson形式でレスポンスするよう指定。
     end
   end
 end

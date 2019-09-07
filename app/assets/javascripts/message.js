@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function(){
     function buildMessage(message){
       var image = message.image ? `<img src= ${message.image}>` : "";
-      //以下、"messages"から始めると、変な反応が起きる。
       var html = `<div class="message"  data-massage-id="${message.id}>
                       <div class="upper-message">
                         <div class="upper-message__user-name">
@@ -28,7 +27,7 @@ $(document).on('turbolinks:load', function(){
   }
 //メッセージの送信、メッセージの表示
 $('#new_message').on('submit', function(e) {
-    e.preventDefault();         // form側のPOSTをキャンセルしている(???)
+    e.preventDefault();          // form側のPOSTをキャンセルしている(???)
     var formdata = new FormData(this);
     var url = $(this).attr('action');
 
@@ -52,39 +51,36 @@ $('#new_message').on('submit', function(e) {
       })
         .always(() => {       //連続送信できるようにする
           $('.form__submit').removeAttr("disabled");
-      })
+      });
   })
-//自動更新
+
+//自動更新------------------------
+
   var reloadMessages = function() {
-      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-
-        var last_message_id = $('.message:last').data("message-id");
-        if (!last_message_id) {
-          last_message_id = 0
-        }
-
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      //今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行。
+      var last_message_id = $('.message:last').data("message-id");
+      //dataメソッドで.messageにある:last最後のカスタムデータ属性を取得しlast_message_idに代入。
         $.ajax({
-          url:      "api/messages",
-          type:     'get',
+          url:      'api/messages',
+          type:     "GET",
           dataType: 'json',
           data:     {id: last_message_id}
         })
         .done(function(messages) {
-          var insertHTML = '';
-          messages.forEach(function (message) {
-            insertHTML = buildPost(message);
-
-              $('.messages').append(insertHTML);
-            })
-            $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+          console.log(messages);
+          var insertHTML = '';//--------------------追加するHTMLの入れ物
+          messages.forEach(function (message) {//---messages配列の中身を取り出す
+            insertHTML = buildMessage(message); //--メッセージが入ったHTMLを取得
+            $('.messages').append(insertHTML);//----メッセージをアペンド
           })
-          .fail(function(messages) {
-            alert('ERROR');
-          })
-          .always(function(data){
-            $('.submit-btn').prop('disabled', false);
-          })
-        }
-      };
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+          //最新のメッセージが一番下に表示されようにスクロールする。
+        })
+        .fail(function () {
+          alert('自動更新に失敗しました');
+        });
+      }
+    };
       setInterval(reloadMessages, 5000);
     });

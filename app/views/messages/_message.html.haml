@@ -1,5 +1,5 @@
 -# カスタムデータ属性で表示メッセージのHTMLにid情報を追加
-.message{ "data-message-id": message.id}
+.message{"data-message-id": "#{message.id}"}
   .upper-message
     .upper-message__user-name
       = message.user.name
