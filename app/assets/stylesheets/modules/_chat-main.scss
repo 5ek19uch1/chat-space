@@ -53,6 +53,7 @@ $font-type: bold;
         background-color: #fafafa;
         overflow: scroll;
         .message{
+          box-sizing: border-box;
           padding-bottom: 40px;
           .upper-message{
             display: flex;
@@ -62,11 +63,13 @@ $font-type: bold;
               color: #434a54;
               font-size: 16px;
               font-weight: bold;
+              line-height: 10px;
             }
               .upper-message__date{
                 color: #999999;
                 font-size: 12px;
                 margin-left: 10px;
+                line-height: 16px;
               }
               .lower-message__content{
                 color: #434a54;
