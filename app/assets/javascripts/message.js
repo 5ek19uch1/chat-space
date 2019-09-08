@@ -2,7 +2,7 @@
 $(document).on('turbolinks:load', function(){
     function buildMessage(message){
       var image = message.image ? `<img src= ${message.image}>` : "";
-      var html = `<div class="message"  data-massage-id="${message.id}>
+      var html = `<div class="message" data-message-id="${message.id}>
                     <div class="upper-message">
                       <div class="upper-message__user-name">
                         ${message.user_name}
@@ -14,14 +14,13 @@ $(document).on('turbolinks:load', function(){
                     <div class="lower-message">
                       <p class="lower-message__content">
                         ${message.content}
-                      </p>
-                      <div class="lower-message__image">
                         ${image}
-                      </div>
+                        </p>
                     </div>
                   </div>`
     return html;
   }
+
 //メッセージの送信、メッセージの表示（非同期通信）--------------
 $('#new_message').on('submit', function(e) {
     e.preventDefault();
@@ -36,16 +35,20 @@ $('#new_message').on('submit', function(e) {
         contentType:  false       //
       })
       .done(function(message) {   //通信に成功した場合の処理
+        console.log('success');
         var html = buildMessage(message); //buildMessageの結果を反映させる
         $('.messages').append(html);//messagesクラスにhtmlをアペンドする
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});  //投稿後スクロール
         $('form')[0].reset();   //入力後、投稿フォームを空にする
       })
         .fail(function(){      //通信に失敗した場合の処理
+          console.log('error');
           alert('エラー');
       })
+      .always(() => {
+        $(".form__submit").removeAttr("disabled");
+      });
     })
-
 //自動更新------------------------
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
@@ -62,7 +65,6 @@ $('#new_message').on('submit', function(e) {
           data:     {last_id: last_message_id}
         })
         .done(function (messages) {
-          console.log(messages)
           var insertHTML = '';        //--------------------追加するHTMLの入れ物
           messages.forEach(function (message) { //---messages配列の中身を取り出す
             insertHTML = buildMessage(message);   //--メッセージが入ったHTMLを取得
@@ -75,5 +77,5 @@ $('#new_message').on('submit', function(e) {
         })
       }
     };
-    setInterval(reloadMessages, 5000);
+    setInterval(reloadMessages, 1000);
   });
