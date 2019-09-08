@@ -22,7 +22,6 @@ $(document).on('turbolinks:load', function(){
               </div>
           </div>
       </div>`
-                  console.log(html);
     return html;
   }
 
@@ -41,14 +40,12 @@ $('#new_message').on('submit', function(e) {
         contentType:  false       //
       })
       .done(function(message) {   //通信に成功した場合の処理
-        console.log('success');
         var html = buildMessage(message); //buildMessageの結果を反映させる
         $('.messages').append(html);//messagesクラスにhtmlをアペンドする
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});  //投稿後スクロール
         $('form')[0].reset();   //入力後、投稿フォームを空にする
       })
         .fail(function(){      //通信に失敗した場合の処理
-          console.log('error');
           alert('エラー');
       })
       .always(() => {
@@ -72,7 +69,6 @@ $('#new_message').on('submit', function(e) {
           data:     {last_id: last_message_id}
         })
         .done(function (messages) {
-          console.log('Success!autoReload')
           var insertHTML = '';        //--------------------追加するHTMLの入れ物
           messages.forEach(function (message) { //---messages配列の中身を取り出す
             insertHTML = buildMessage(message);   //--メッセージが入ったHTMLを取得
