@@ -62,12 +62,12 @@ $('#new_message').on('submit', function(e) {
           if (!last_message_id) {
             last_message_id = 0
           }
-      $.ajax({
-        url:      "api/messages",
-          type:     'GET',
-          dataType: 'json',
-          data:     {last_id: last_message_id}
-        })
+        $.ajax({
+          url:      "api/messages",
+            type:     'GET',
+            dataType: 'json',
+            data:     {last_id: last_message_id}
+          })
         .done(function (messages) {
           var insertHTML = '';        //--------------------追加するHTMLの入れ物
           messages.forEach(function (message) { //---messages配列の中身を取り出す
