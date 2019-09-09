@@ -62,3 +62,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "better_errors"
 gem 'pry-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end

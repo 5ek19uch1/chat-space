@@ -45,8 +45,8 @@ $('#new_message').on('submit', function(e) {
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});  //投稿後スクロール
         $('form')[0].reset();   //入力後、投稿フォームを空にする
       })
-        .fail(function(){      //通信に失敗した場合の処理
-          alert('エラー');
+      .fail(function(){      //通信に失敗した場合の処理
+        alert('エラー');
       })
       .always(() => {
         $(".form__submit").removeAttr("disabled");
