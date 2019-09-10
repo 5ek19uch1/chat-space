@@ -67,6 +67,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "better_errors"
 gem 'pry-rails'
+gem 'fog-aws'
+
 
 group :production do
   gem 'unicorn', '5.4.1'
