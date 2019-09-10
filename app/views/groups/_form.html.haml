@@ -14,7 +14,7 @@
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
 
-    -#チャットメンバー検索フォーム
+    -#チャットメンバー検索フォーム　最後のuser-search-resultに、jsの結果が返ってくる。
     .chat-group-form__field--left
       %label.chat-group-form__label{for: "chat_group_チャットメンバーを追加"} チャットメンバーを追加
     .chat-group-form__field--right
@@ -33,8 +33,7 @@
             %p.chat-group-user__name
               = user.name
             - unless user.name == current_user.name
-              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
-                削除
+              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
