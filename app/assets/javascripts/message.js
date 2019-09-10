@@ -1,4 +1,4 @@
-//下記で帰ってきたjosnデータを受け取りHTMLを作成する。
+//下記で帰ってきたjosnデータを受け取りHTMLを作成(コメント画面の新規投稿)する。
 $(document).on('turbolinks:load', function(){
     function buildMessage(message){
       var image = message.image ? `<img src= ${message.image}>` : "";
@@ -24,6 +24,11 @@ $(document).on('turbolinks:load', function(){
       </div>`
     return html;
   }
+
+  function scroll(){
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast')
+  }
+
 
 
 //メッセージの送信、メッセージの表示（非同期通信）--------------
@@ -59,9 +64,9 @@ $('#new_message').on('submit', function(e) {
           //今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行。
           var last_message_id = $('.message:last').data("message-id");
           //dataメソッドで.messageにある:last最後のカスタムデータ属性を取得しlast_message_idに代入。
-          if (!last_message_id) {
-            last_message_id = 0
-          }
+          // if (!last_message_id) {
+          //   last_message_id = 0
+          // }
         $.ajax({
           url:      "api/messages",
             type:     'GET',
@@ -73,13 +78,13 @@ $('#new_message').on('submit', function(e) {
           messages.forEach(function (message) { //---messages配列の中身を取り出す
             insertHTML = buildMessage(message);   //--メッセージが入ったHTMLを取得
             $('.messages').append(insertHTML);         //----メッセージをアペンド
+            scroll();
           })
-          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
         })
         .fail(function () {
           alert('自動更新に失敗しました');
         })
       }
     };
-    setInterval(reloadMessages, 3000);
+    setInterval(reloadMessages, 5000);
   });

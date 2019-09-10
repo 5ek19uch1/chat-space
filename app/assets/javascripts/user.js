@@ -4,11 +4,15 @@ $(document).on('turbolinks:load',function() {
     var html =
     `<div id="user-search-result">
         <div class = "chat-group-user js-group-user clearfix">
-        <p class = "chat-group-user__name">${user_name}</p>
-        <a class ="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user_id}" data-user-name="${user_name}">追加</a>
-      </div>
+        <p class = "chat-group-user__name">${user.name}
+        </p>
+        <a class ="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">
+          追加
+        </a>
+        </div>
     </div>`
     search_list.append(html);   //上記varのsearch_listにHTMLをアペンドする
+    return html;
   }
 
   function appendNoUser(user) {   //検索結果に追加しない
@@ -20,10 +24,15 @@ $(document).on('turbolinks:load',function() {
     var html =
     `<div class='chat-group-user clearfix js-chat-member' id="chat-group-user-${user_id}">
       <input name="group[user_ids][]" type="hidden" value="${user_id}">
-      <p class="chat-group-user__name">${name}</p>
-      <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn data-user-id=${user_id} data-user-name=${name}"> 削除</a>
+      <p class="chat-group-user__name">${name}
+      </p>
+      <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn data-user-id=${user_id} data-user-name=${name}">
+      削除
+      </a>
     </div>`
-    search_list.append(html);
+
+    $("#chat-group-users").append(html);
+    // search_list.append(html);
   }
 
   $("#user-search-field").on("keyup", function() {
@@ -40,7 +49,7 @@ $(document).on('turbolinks:load',function() {
     })
     .done(function(data) {          //通信成功の場合
       $("#user-search-result").empty(); //非同期通信の結果をdoneの関数の引数から受取り、ビューに追加する
-      if (data.length !== 0) {       //検索ヒット.。データの長さが０じゃなければ＝データがあれば
+      if (data.length !== 0) {       //検索ヒット。データの長さが０じゃなければ＝データがあれば
         data.forEach(function(user){
         appendUser(user);
         });
