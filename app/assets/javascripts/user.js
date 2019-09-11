@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function() {
           appendUser(user);
         });
       }else {
-        appendNoUser('一致るするユーザーはありません');
+        appendNoUser('一致するユーザーはありません');
       }
     })
 // ユーザー検索失敗
