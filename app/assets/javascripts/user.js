@@ -3,13 +3,13 @@ $(document).on('turbolinks:load', function() {
   function appendUser(user) {         //チャットメンバーを追加、のところ。つまり検索結果表示。
     var html =
     `<div id="user-search-result">
-        <div class = "chat-group-user js-group-user clearfix">
-          <p class = "chat-group-user__name">${user.name}
-          </p>
-          <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">
-            追加
-          </a>
-        </div>
+      <div class = "chat-group-user js-group-user clearfix">
+        <p class = "chat-group-user__name">${user.name}
+        </p>
+        <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">
+          追加
+        </a>
+      </div>
     </div>`
     search_list.append(html);   //上記varのsearch_listにHTMLをアペンドする
     console.log(user.name, user.id, html);
