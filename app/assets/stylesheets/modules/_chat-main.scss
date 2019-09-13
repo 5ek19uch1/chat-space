@@ -2,26 +2,40 @@ $white-font: #ffffff;
 $chatspace-blue: #38aef0;
 $font-type: bold;
 
+
+
 .wrapper{
   margin: 0px;
   padding: 0px;
   .chat-main{
     width: calc(100vw - 300px);
     float: left;
-      .main-header{
-        height: 100px;
-        padding: 0 40px;
-        display: flex;
-        justify-content: space-between;
-        border-bottom: solid 1px #eee;
-        overflow: scroll;
+    animation: fadeIn 2s ease 0s 1 normal;
+      -webkit-animation: fadeIn 2s ease 0s 1 normal;
+      @keyframes fadeIn {
+        0% {opacity: 0}
+        100% {opacity: 1}
+      }
+      @-webkit-keyframes fadeIn {
+        0% {opacity: 0}
+        100% {opacity: 1}
+      }
+    .main-header{
+      height: 100px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px #eee;
+      overflow: scroll;
         &__left-box{
           margin-top: 35px;
         }
           &__left-box__current-group{
-            font-size: 20px;
+            font-size: 25px;
             color: #333;
-            margin-bottom: 15px;
+            // margin-bottom: 15px;
+            // padding: 0;
+            // margin: 0;
           }
             &__left-box__member-list{
               display: flex;
@@ -45,34 +59,39 @@ $font-type: bold;
               .edit-button1{
                 text-decoration: none;
                 color: $chatspace-blue;
+                height: 40px;
+                // width: 90px;
               }
       }
       .messages{
         height: calc(100vh - 190px);
+        background-image: url("./workplace.jpg");
         padding: 46px 40px;
-        background-color: #fafafa;
         overflow: scroll;
         .message{
           box-sizing: border-box;
           padding-bottom: 40px;
+          background-color: rgba(53, 53, 53, 0.3);
+
           .upper-message{
             display: flex;
             margin-bottom: 10px;
           }
             .upper-message__user-name{
               color: #434a54;
+              background-color: rgb(192, 190, 190);
               font-size: 16px;
               font-weight: bold;
-              line-height: 10px;
+              line-height: 8px;
             }
               .upper-message__date{
-                color: #999999;
+                color: #e5e2e2;
                 font-size: 12px;
                 margin-left: 10px;
                 line-height: 16px;
               }
               .lower-message__content{
-                color: #434a54;
+                color: #000000;
                 font-size: 14px;
                 margin-bottom: 10px;
               }
@@ -82,7 +101,7 @@ $font-type: bold;
           background-color: #DDDDDD;
           box-sizing: border-box;
           height: 90px;
-          padding: 20px 50px 20px 40px;
+          padding: 20px 10px 20px 40px;
           &__message {
             border: none;
             float: left;
@@ -108,9 +127,10 @@ $font-type: bold;
             border: none;
             color: $white;
             float: right;
-            font-size: 16px;
+            font-size: 12px;
             height: 50px;
-            margin-left: 15px;
+            // width: 90px;
+            margin-left: 10px;
             padding: 0 30px;
           }
         }
