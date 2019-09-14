@@ -16,7 +16,14 @@ html{
 
 *{
   box-sizing: inherit;
+  font-family: 'Noto Sans JP', sans-serif;
+  // font-family: 'Permanent Marker', cursive;
+  // font-family: 'Archivo Black', sans-serif;
+  // font-family: 'Staatliches', cursive;
+  // font-family: 'Mitr', sans-serif;
+  letter-spacing: 3px;
 }
+
 
 /*
   TODO remove settings on BODY since we can't namespace it.

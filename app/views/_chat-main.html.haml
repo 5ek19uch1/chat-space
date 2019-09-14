@@ -7,10 +7,26 @@
       .main-header__left-box__member-list__member
         - @group.users.each do |user|
           = user.name
+          ,
   .main-header__edit-button
     = link_to 'Edit',edit_group_path(@group.id),class: "edit-button1"
 
 .messages
+  -# %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"}
+  -# %img#randomimg/
+  -# :javascript
+  -#   $(function() {
+  -#     var array = [
+  -#     "./meeting.jpg",
+  -#     "./startup.jpg",
+  -#     "./people.jpg",
+  -#     "./meeting.jpg",
+  -#     ];
+  -#     var l = array.length;
+  -#     var r = Math.floor(Math.random()*l);
+  -#     var imgurl = array[r];
+  -#     $("messages").attr({"src":imgurl});
+  -#   });
   = render @messages
 
 .form
@@ -21,3 +37,5 @@
         = fa_icon 'picture-o', class: 'icon'
         = f.file_field :image, class: 'hidden'
     = f.submit 'Send', class: 'form__submit'
+
+

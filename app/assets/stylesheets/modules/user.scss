@@ -1,11 +1,31 @@
+
+.main-title{
+  padding-top:     20px;
+  font-size:      90px;
+  color:        rgb(182, 50, 50);
+  text-align:     center;
+  letter-spacing: 20px;
+  font-family:   'Permanent Marker', cursive;
+  
+}
+.main-subtitle{
+  margin-top:     20px;
+  font-size:      21px;
+  letter-spacing: 25px;
+  text-align:     center;
+  color: white;
+}
 .account-page {
+  background-image: url("./people.jpg");
+  background-size: cover;
+  height: 100vh;
   .account-page__inner {
-    width: 980px;
-    margin: 60px auto;
-    padding: 60px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+      width: 980px;
+      margin: 60px auto;
+      padding: 60px;
+      // border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: rgba(14,43,43,0.3);
 
     .account-page__inner--left, .account-page__inner--right {
       float: left;
@@ -17,14 +37,14 @@
       display: block;
     }
   }
-
+  
   .account-page__header {
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
-      font-size: 40px;
+      font-size: 20px;
       font-weight: 200;
-
+      
       &:after {
         content: '';
         display: block;
@@ -33,13 +53,14 @@
         border-bottom: 1px solid #38aef0;
       }
     }
-
+    
     h5 {
       margin-bottom: 20px;
-      font-size: 14px;
+      font-size: 5px;
       font-weight: 200;
+      color: white;
     }
-
+    
     .btn {
       margin-top: 20px;
       color: #fff;
@@ -47,16 +68,17 @@
       font-size: 14px;
     }
   }
-
+  
   .field {
     margin-bottom: 10px;
-
+    
     .field-label {
       padding: 10px 0;
       letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
-
+      color: white;
+      
       i {
         font-size: 11px;
       }
@@ -70,7 +92,7 @@
       }
     }
   }
-
+  
   .btn {
     display: inline-block;
     height: 50px;
@@ -81,7 +103,7 @@
     border: none;
     border-radius: 2px;
   }
-
+  
   input[type='submit'] {
     float: left;
     margin-top: 20px;
@@ -120,19 +142,19 @@
   padding: 20px 30px;
   border: 1px solid #ddd;
   border-radius: 2px;
-
+  
   h2 {
     margin-bottom: 10px;
     color: #d65f4c;
     font-size: 14px;
   }
-
+  
   ul {
     margin: 0;
     padding-left: 17px;
     list-style: square;
   }
-
+  
   li {
     margin: 0;
     padding: 0;
