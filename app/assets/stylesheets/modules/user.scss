@@ -30,6 +30,27 @@
     .account-page__inner--left, .account-page__inner--right {
       float: left;
       width: 50%;
+      h2 {
+        margin-bottom: 10px;
+        letter-spacing: 3px;
+        font-size: 20px;
+        font-weight: 200;
+        
+        &:after {
+          content: '';
+          display: block;
+          width: 60px;
+          margin-top: 5px;
+          border-bottom: 1px solid #38aef0;
+        }
+      }
+      
+      h5 {
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 200;
+        color: white;
+      }
     }
     &:after {
       clear: both;
@@ -55,8 +76,8 @@
     }
     
     h5 {
-      margin-bottom: 20px;
-      font-size: 5px;
+      margin-bottom: 0px;
+      font-size: 15px;
       font-weight: 200;
       color: white;
     }
