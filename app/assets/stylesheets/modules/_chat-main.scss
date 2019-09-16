@@ -2,8 +2,6 @@ $white-font: #ffffff;
 $chatspace-blue: #38aef0;
 $font-type: bold;
 
-
-
 .wrapper{
   margin: 0px;
   padding: 0px;
@@ -65,7 +63,7 @@ $font-type: bold;
       }
       .messages{
         height: calc(100vh - 190px);
-        background-image: url("./workplace.jpg");
+        background-image: image-url("workplace.jpg");
         padding: 46px 40px;
         overflow: scroll;
         .message{
@@ -101,12 +99,12 @@ $font-type: bold;
           background-color: #DDDDDD;
           box-sizing: border-box;
           height: 90px;
-          padding: 20px 10px 20px 40px;
+          padding: 20px 40px 20px 40px;
           &__message {
             border: none;
             float: left;
             height: 50px;
-            width: calc(100% - 150px);
+            width: calc(100% - 200px);
             padding: 0 40px 0 10px;
           }
           &__mask {
@@ -131,7 +129,7 @@ $font-type: bold;
             height: 50px;
             // width: 90px;
             margin-left: 10px;
-            padding: 0 30px;
+            padding: 0 40px;
           }
         }
       }
