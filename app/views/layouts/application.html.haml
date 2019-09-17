@@ -2,11 +2,13 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
-    %link{href: "https://fonts.googleapis.com/css?family=Archivo+Black|Mitr|Noto+Sans+JP:400,500|Permanent+Marker|Staatliches&display=swap&subset=japanese", :rel => "stylesheet"}/
+    %meta{:content => "width=device-width,initial-scale=1.0,minimum-scale=1.0", :name => "viewport"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Kosugi+Maru|Luckiest+Guy|Source+Code+Pro:400,700|Viga&display=swap&subset=japanese", :rel => "stylesheet"}/
     %title ChatSpace
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
 
   %body
     = render 'layouts/notifications'

@@ -1,11 +1,11 @@
 
 .main-title{
-  padding-top:     20px;
+  padding-top:     70px;
   font-size:      90px;
   color:        $chatspace-blue;
+  // text-stroke: 3px #FFF;
   text-align:     center;
   letter-spacing: 20px;
-  font-family:   'Permanent Marker', cursive;
 }
 .main-subtitle{
   margin-top:     20px;
@@ -16,8 +16,20 @@
 }
 .account-page {
   background-image: image-url("people.jpg");
-  // background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow:hidden;
   height: 100vh;
+  animation: fadeIn 2s ease 0s  normal;
+  -webkit-animation: fadeIn 4s ease 0s 1 normal;
+  @keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+  @-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
   .account-page__inner {
       width: 980px;
       margin: 60px auto;
