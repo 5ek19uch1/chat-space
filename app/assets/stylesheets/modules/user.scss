@@ -6,18 +6,24 @@
   // text-stroke: 3px #FFF;
   text-align:     center;
   letter-spacing: 20px;
+  font-family: 'Londrina Outline', cursive;
+  font-weight: bold;
+
 }
 .main-subtitle{
   margin-top:     20px;
   font-size:      21px;
-  letter-spacing: 25px;
+  letter-spacing: 20px;
   text-align:     center;
-  color: white;
+  // color: white;
+  color:        $chatspace-blue;
+
 }
 .account-page {
-  background-image: image-url("people.jpg");
+  background-image: image-url("room.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  // background-attachment: fixed;
+  background-size: cover;
   overflow:hidden;
   height: 100vh;
   animation: fadeIn 2s ease 0s  normal;
