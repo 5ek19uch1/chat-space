@@ -1,5 +1,5 @@
 h1 {
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -24,64 +24,85 @@ li {
 }
 
 
+.chat-groups{
+  background-image:image-url("startup.jpg");
+  background-size: cover;
+  height:100vh;
 
-.chat-group-form {
-  width: 980px;
-  margin: 60px auto;
-  padding: 40px;
-  // background-color: #fff;
-  // background-image: image-url("meeting.jpg");
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
-  &__errors {
-    margin: 30px 0;
-    padding: 20px 40px;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    text-align: center;
+  animation: fadeIn 2s ease 0s  normal;
+  -webkit-animation: fadeIn 4s ease 0s 1 normal;
+  @keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
   }
-  &__label {
-    display: block;
-    line-height: 50px;
-    font-weight: bold;
-    text-align: right;
-  }
-  &__input {
-    float: left;
-    width: 100%;
-    line-height: 30px;
-    padding: 10px 15px;
-    box-sizing: border-box;
-  }
-  &__action-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    color: #fff;
-    background-color: #38aef0;
-    border: 0;
-  }
-  &__field {
-    margin-top: 30px;
-    &:after {
-      content: "";
-      clear: both;
-      display: block;
-    }
-    &--left {
-      float: left;
-      width: 30%;
-      padding-right: 20px;
-      padding-left: 20px;
-      box-sizing: border-box;
-    }
-    &--right {
-      float: right;
-      width: 70%;
-    }
+  @-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
   }
 }
+  .chat-group-form {
+    color: white;
 
+    width: 980px;
+    margin: 0px auto;
+    padding: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    &__errors {
+      margin: 30px 0;
+      padding: 20px 40px;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      text-align: center;
+    }
+    &__label {
+      display: block;
+      line-height: 50px;
+      font-weight: bold;
+      text-align: right;
+    }
+    &__input {
+      float: left;
+      width: 100%;
+      line-height: 30px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+    }
+    &__action-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      color: #fff;
+      background-color: #38aef0;
+      border: 0;
+    }
+    &__field {
+      margin-top: 30px;
+      &:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      &--left {
+        float: left;
+        width: 30%;
+        padding-right: 20px;
+        padding-left: 20px;
+        box-sizing: border-box;
+      }
+      &--right {
+        float: right;
+        width: 70%;
+      }
+    }
+  }
+  
 .chat-group-user {
   padding: 0 15px;
   line-height: 50px;
