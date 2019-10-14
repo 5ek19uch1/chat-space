@@ -51,7 +51,7 @@ $('#new_message').on('submit', function(e) {
         $('form')[0].reset();   //入力後、投稿フォームを空にする
       })
       .fail(function(){      //通信に失敗した場合の処理
-        alert('エラー');
+        alert('入力してくだ入力してくだちい');
       })
       .always(() => {
         $(".form__submit").removeAttr("disabled");
