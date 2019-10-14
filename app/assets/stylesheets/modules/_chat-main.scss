@@ -31,15 +31,17 @@ $font-type: bold;
       background-color: rgb(240, 236, 236);
       overflow: scroll;
         &__left-box{
-          margin-top: 35px;
+          margin-top: 15px;
           font-size:12px;
         }
           &__left-box__current-group{
+            margin-top: 5px;
             font-size: 25px;
             color: #333;
           }
             &__left-box__member-list{
               display: flex;
+              margin-top: 5px;
               font-size: 12px;
               color: #999999;
             }
@@ -51,7 +53,7 @@ $font-type: bold;
                 height: 40px;
                 line-height: 40px;
                 padding: 0 20px;
-                margin-top: 30px;
+                margin-top: 25px;
                 border: solid 1px $chatspace-blue;
                 color: $chatspace-blue;
                 position: absolute;
