@@ -1,6 +1,6 @@
 
 .main-title{
-  padding-top:     70px;
+  // padding-top:     70px;
   font-size:      90px;
   color:        $chatspace-blue;
   // text-stroke: 3px #FFF;
@@ -10,15 +10,26 @@
   font-weight: bold;
 
 }
-.main-subtitle{
-  margin-top:     20px;
-  font-size:      21px;
-  letter-spacing: 20px;
+.main-subtitle-box{
+  width: 60%;
+  justify-content: center;
+  margin: 100px auto 0 auto;
   text-align:     center;
-  // color: white;
-  color:        $chatspace-blue;
-
+  display: flex;
 }
+.main-subtitle{
+  font-size:      23px;
+  letter-spacing: 30px;
+  text-align:     center;
+  color:        $chatspace-blue;
+}
+
+.subtitle-dot{
+  font-size:      23px;
+  text-align:     center;
+  color:        $chatspace-blue;
+}
+
 .account-page {
   background-image: image-url("room.jpg");
   background-repeat: no-repeat;
@@ -26,7 +37,7 @@
   background-size: cover;
   overflow:hidden;
   height: 100vh;
-  animation: fadeIn 2s ease 0s  normal;
+  animation: fadeIn 1s ease 0s  normal;
   -webkit-animation: fadeIn 4s ease 0s 1 normal;
   @keyframes fadeIn {
     0% {opacity: 0}

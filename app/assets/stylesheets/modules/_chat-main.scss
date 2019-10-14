@@ -8,7 +8,7 @@ $font-type: bold;
   .chat-main{
     width: calc(100vw - 300px);
     float: left;
-    animation: fadeIn 2s ease 0s 1 normal;
+    animation: fadeIn 1s ease 0s 1 normal;
       -webkit-animation: fadeIn 2s ease 0s 1 normal;
       @keyframes fadeIn {
         0% {opacity: 0}
@@ -19,12 +19,16 @@ $font-type: bold;
         100% {opacity: 1}
       }
     .main-header{
+      border-radius: 10px;
       height: 100px;
       padding: 0 40px;
+      margin-top: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
       display: flex;
       justify-content: space-between;
       border-bottom: solid 1px #eee;
-      background-color: #fff;
+      background-color: rgb(212, 211, 211);
       overflow: scroll;
         &__left-box{
           margin-top: 35px;
@@ -32,9 +36,6 @@ $font-type: bold;
           &__left-box__current-group{
             font-size: 25px;
             color: #333;
-            // margin-bottom: 15px;
-            // padding: 0;
-            // margin: 0;
           }
             &__left-box__member-list{
               display: flex;
@@ -63,13 +64,17 @@ $font-type: bold;
               }
       }
       .messages{
+        border-radius: 10px;
         height: calc(100vh - 190px);
         background-image: image-url("workplace.jpg");
         padding: 46px 40px;
+        margin: 5px;
         overflow: scroll;
         .message{
+          border-radius: 10px;
           box-sizing: border-box;
           padding-bottom: 40px;
+          margin-bottom: 30px;
           background-color: rgba(17, 17, 17, 0.3);
 
           .upper-message{
@@ -77,11 +82,10 @@ $font-type: bold;
             margin-bottom: 10px;
           }
             .upper-message__user-name{
-              color: #434a54;
-              background-color: rgb(192, 190, 190);
-              font-size: 16px;
+              color: white;
+              font-size: 20px;
               font-weight: bold;
-              line-height: 8px;
+              margin-left: 5px;
             }
               .upper-message__date{
                 color: #e5e2e2;
@@ -93,14 +97,18 @@ $font-type: bold;
                 color: #000000;
                 font-size: 14px;
                 margin-bottom: 10px;
+                margin-left: 5px;
               }
             }
           }
         .form {
+          border-radius: 10px;
           background-color: #DDDDDD;
           box-sizing: border-box;
           height: 90px;
           padding: 20px 40px 20px 40px;
+          margin-left: 5px;
+          margin-right: 5px;
           &__message {
             border: none;
             float: left;
