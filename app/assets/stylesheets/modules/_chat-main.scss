@@ -9,7 +9,7 @@ $font-type: bold;
     width: calc(100vw - 300px);
     float: left;
     animation: fadeIn 1s ease 0s 1 normal;
-      -webkit-animation: fadeIn 2s ease 0s 1 normal;
+      -webkit-animation: fadeIn 1s ease 0s 1 normal;
       @keyframes fadeIn {
         0% {opacity: 0}
         100% {opacity: 1}
