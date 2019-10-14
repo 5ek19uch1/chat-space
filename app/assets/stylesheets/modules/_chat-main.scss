@@ -32,6 +32,7 @@ $font-type: bold;
       overflow: scroll;
         &__left-box{
           margin-top: 35px;
+          font-size:12px;
         }
           &__left-box__current-group{
             font-size: 25px;
@@ -78,7 +79,8 @@ $font-type: bold;
           box-sizing: border-box;
           padding-bottom: 40px;
           margin-bottom: 30px;
-          background-color: rgba(219, 216, 216, 0.3);
+          // background-color: rgba(219, 216, 216, 0.3);
+          background-color: rgba(17, 17, 17, 0.3);
 
           .upper-message{
             background-color: rgba(17, 17, 17, 0.3);
@@ -110,7 +112,7 @@ $font-type: bold;
           border-radius: 10px;
           background-color: #DDDDDD;
           box-sizing: border-box;
-          height: 90px;
+          height: 85px;
           padding: 20px 40px 20px 40px;
           margin-left: 5px;
           margin-right: 5px;
