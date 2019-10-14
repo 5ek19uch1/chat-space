@@ -12,21 +12,6 @@
     = link_to 'Edit',edit_group_path(@group.id),class: "edit-button1"
 
 .messages
-  -# %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"}
-  -# %img#randomimg/
-  -# :javascript
-  -#   $(function() {
-  -#     var array = [
-  -#     "./meeting.jpg",
-  -#     "./startup.jpg",
-  -#     "./people.jpg",
-  -#     "./meeting.jpg",
-  -#     ];
-  -#     var l = array.length;
-  -#     var r = Math.floor(Math.random()*l);
-  -#     var imgurl = array[r];
-  -#     $("messages").attr({"src":imgurl});
-  -#   });
   = render @messages
 
 .form

@@ -28,7 +28,7 @@ $font-type: bold;
       display: flex;
       justify-content: space-between;
       border-bottom: solid 1px #eee;
-      background-color: rgb(212, 211, 211);
+      background-color: rgb(240, 236, 236);
       overflow: scroll;
         &__left-box{
           margin-top: 35px;
@@ -60,7 +60,10 @@ $font-type: bold;
                 text-decoration: none;
                 color: $chatspace-blue;
                 height: 40px;
-                // width: 90px;
+                &:hover{
+                  color: red;
+                  transition: color 0.5s ease 0s;
+                }
               }
       }
       .messages{
@@ -138,9 +141,14 @@ $font-type: bold;
             float: right;
             font-size: 20px;
             height: 50px;
-            // width: 90px;
             margin-left: 10px;
             padding: 0 40px;
+            &:hover{
+              background-color: $white;
+              color:$light_blue;
+              transition: color 0.5s ease 0s;
+
+            }
           }
         }
       }
