@@ -75,11 +75,14 @@ $font-type: bold;
           box-sizing: border-box;
           padding-bottom: 40px;
           margin-bottom: 30px;
-          background-color: rgba(17, 17, 17, 0.3);
+          // background-color: rgba(17, 17, 17, 0.3);
+          background-color: rgba(219, 216, 216, 0.3);
 
           .upper-message{
+            background-color: rgba(17, 17, 17, 0.3);
             display: flex;
             margin-bottom: 10px;
+            border-radius: 10px 10px 0 0;
           }
             .upper-message__user-name{
               color: white;
@@ -91,7 +94,8 @@ $font-type: bold;
                 color: #e5e2e2;
                 font-size: 12px;
                 margin-left: 10px;
-                line-height: 16px;
+                padding-top: 5px;
+                // line-height: 16px;
               }
               .lower-message__content{
                 color: #000000;
