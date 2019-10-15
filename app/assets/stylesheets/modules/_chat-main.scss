@@ -50,14 +50,17 @@ $font-type: bold;
               color: #999999;
             }
               &__edit-button{
-                height: 40px;
+                height: 45px;
                 line-height: 40px;
                 padding: 0 20px;
-                margin-top: 25px;
+                margin-top: 20px;
                 border: solid 1px $chatspace-blue;
+                border-radius: 10px;
                 color: $chatspace-blue;
                 position: absolute;
                 right: 40px;
+                width: 130px;
+                text-align: center;
               }
               .edit-button1{
                 text-decoration: none;
@@ -120,6 +123,7 @@ $font-type: bold;
           margin-right: 5px;
           &__message {
             border: none;
+            border-radius: 10px 0 0 10px;
             float: left;
             height: 50px;
             width: calc(100% - 200px);
@@ -130,6 +134,7 @@ $font-type: bold;
             float: left;
             height: 50px;
             padding-right: 10px;
+            border-radius: 0 10px 10px 0;
             &__image {
               font-size: 20px;
               line-height: 50px;
@@ -141,6 +146,7 @@ $font-type: bold;
           &__submit {
             background-color: $light_blue;
             border: none;
+            border-radius: 10px;
             color: $white;
             float: right;
             font-size: 20px;
