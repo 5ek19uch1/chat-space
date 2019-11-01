@@ -60,7 +60,12 @@ $font-type: bold;
       margin-top: 5px;
       margin-left: 5px;
       overflow: scroll;
+      p{
+        font-size: 25px;
+        margin-bottom: 60px;
+      }
       .group{
+        margin-top: 20px;
         margin-bottom: 40px;
         .group__name{
           font-size: 18px;

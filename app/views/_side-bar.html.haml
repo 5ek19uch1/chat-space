@@ -1,5 +1,6 @@
 .side-header
   .side-header__box
+    %p You:
     %p.side-header__box__user-name
       =current_user.name
     %ul.side-header__box__menu
@@ -10,6 +11,7 @@
         =link_to edit_user_path(current_user) do
           %i.fa.fa-cog
 .groups
+  %p Select a Group
   -current_user.groups.each do |group|
     .group
       = link_to group_messages_path(group) do
